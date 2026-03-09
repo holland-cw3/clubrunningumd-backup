@@ -1,6 +1,9 @@
 # Backup Log
 1/22/2025 - Backup Forked
 
+<img width="1600" height="705" alt="Screenshot 2024-01-04 143306" src="https://github.com/user-attachments/assets/4277b8ea-310a-4e27-a53d-03bbebd99a5b" />
+
+
 # Quick Start - Cloning
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 To learn React, check out the [React documentation](https://reactjs.org/).
