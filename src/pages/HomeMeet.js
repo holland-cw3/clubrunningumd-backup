@@ -1,116 +1,201 @@
 import React from "react";
-import natsPic from "../Pictures/terpInvite.png";
+import terpInvitePoster from "../Pictures/terpInvite.png";
 
-export default function About() {
+const trackEvents = [
+  { time: "10:00am", event: "Alumni Mile (combined)" },
+  { time: "10:15am", event: "Swedish Medley Relay" },
+  { time: "10:35am", event: "5000m Run" },
+  { time: "12:05pm", event: "4x800m Relay" },
+  { time: "12:35pm", event: "100m Hurdles / 110m Hurdles" },
+  { time: "1:10pm", event: "Officials Break", break: true },
+  { time: "1:20pm", event: "100m Dash" },
+  { time: "1:50pm", event: "400m Dash" },
+  { time: "2:10pm", event: "1500m Run" },
+  { time: "3:00pm", event: "400m Hurdles" },
+  { time: "3:25pm", event: "1500m Racewalk (combined)" },
+  { time: "3:45pm", event: "4x100m Relay" },
+  { time: "4:00pm", event: "800m Run" },
+  { time: "4:30pm", event: "200m Dash" },
+  { time: "4:45pm", event: "4x400m Relay" },
+  { time: "5:00pm", event: "Fun Relay (combined, not scored)" },
+];
+
+const hexathlonEvents = ["200m", "1500m", "High Jump", "Long Jump", "Shot Put", "100/110m Hurdles"];
+
+const diceRelay = {
+  title: "Dice Relay (Fun Relay)",
+  description:
+    "6 sided dice rolled before the race, and then again at the bell lap. Prior to the race, the roll determines how many 100m must be run by each athlete (example, 3 would mean 300m per leg for the first 3 legs). Then after the anchor completes their leg, the dice is rolled again. That roll determines how many more hundreds the anchor leg must run. For example, if the second roll is a 4, the anchor would run that same 300, then 400 more, for 700m total.",
+};
+
+const fieldEvents = [
+  "9:30 AM — High Jump",
+  "10:00 AM — Shot Put (combined)",
+  "11:15 AM — Women's Long Jump",
+  "12:00 PM — Women's Discus, Men's Long Jump",
+  "1:15 PM — Men's Discus, Women's Triple Jump",
+  "2:00 PM — Men's Triple Jump",
+];
+
+const archivedResults = [
+  {
+    label: "2024 Results",
+    href: "https://results.firstlanetiming.com/meets/35171",
+  },
+  {
+    label: "2025 Results",
+    href: "https://results.mdtimingllc.com/meets/47857"
+  },
+  {
+    label:"2026 Results",
+    href:"https://results.firstlanetiming.com/meets/68033"
+  }
+];
+
+export default function HomeMeet() {
   return (
- 
-    <div className="text-white font-bold bg-black">
-      {/* Container for the team picture */}
-      <div class="teamPic-container">
-        {/* Display the team picture */}
-        <img src={natsPic} alt="" className="teamPic" />
-      </div>
-      <div className="text-left max-w-4xl mx-auto p-6 text-left">
-      {/* Section for event details */}
-      <div>
-        {/* Main content container */}
-        <div className="flex flex-col">
-          {/* Title of the event */}
-     
-          <h1 className="text-5xl font-bold mt-5 mb-5 text-center">
-            5th Annual Terrapin Invitational
-          </h1>
-          <p>Join us for the 5th annual Terrapin Invitational on Sunday, April 27th! Meet day details and registration are up to date and you can take a look below. See you soon! 🏃‍♂️🏃‍♀️ </p>
-
-          {/* Date and location of the event */}
-          <h2 className="text-2xl font-bold mt-5 mb-5">
-            When and Where?
-          </h2>
-          <ol>
-            <li>
-              <a href="https://maps.app.goo.gl/Yzw4hC2NY6ynLfP68">Kehoe Track and Field Complex
-7898 Championship Ln, College Park, MD 20742</a></li>
-            <li>April, 27th 2025</li>
-          </ol>
-       
-
-        </div>
-
-        {/* Section for order of events */}
-        <div className="contentOrderOfEvents"></div>
-        <h2 className="text-2xl font-bold mt-5 mb-5">
-          Order of Events:
-        </h2>
-        <div class="p-4 mb-4 text-sm text-green-500 rounded-lg bg-yellow-50 dark:bg-gray-800" role="alert">
-        ✅ Event details for this year's (2025) meet are up to date!
-        </div>
-          <p>Women's group first, followed by men's group</p>
-          <h3 className="text-xl underline">Track Events (Starts at 10 AM)</h3>
-          {/* List of track events */}
-          <ol className="">
-            <li>Alumni Mile (Combined)</li>
-            <li>Swedish Medley Relay</li>
-            <li>5000m Run</li>
-            <li>4x800 Relay</li>
-            <li>100m Dash</li>
-            <li>100m Hurdles/110m Hurdles</li>
-            <li>400m Dash</li>
-            <li>1500m Run</li>
-            <li>4x100m Relay</li>
-            <li>800m Dash</li>
-            <li>200m Dash</li>
-            <li>4x400m Relay</li>
-            <li>4x Anything but a 400 Relay (Not Scored): 
-              <ol>
-                <li>Four runners, four legs, 1600m total team distance. But you CANNOT run a 400! The team races a 1600m total and can hand off wherever so that each person can run any distance (each person still runs only one leg of the race).</li>
-              </ol>
-            </li>
-          </ol>
-          <h3 className="text-xl underline">Field Events</h3>
-          <ol>
-            <li>9:30am - High Jump</li>
-            <li>10:00am - Shot Put (combined)</li>
-            <li>11:15am - Women’s Long Jump</li>
-            <li>12:00pm - Women’s Discus, Men’s Long Jump</li>
-            <li>1:15pm - Men’s Discus, Women’s Triple Jump</li>
-            <li>2:00pm - Men’s Triple Jump</li>
-          </ol>
+    <div className="page-shell">
+      <div className="page-hero">
+        <img
+          src={terpInvitePoster}
+          alt="Terrapin Invitational poster"
+          className="page-hero-image contain"
+        />
       </div>
 
-      {/* Section for registration */}
-      <div className="contentRegistration"></div>
-      <h2 className=" text-2xl font-bold mt-5 mb-5">
-        Registration </h2>
-      <div class="p-4 mb-4 text-sm text-green-500 rounded-lg bg-yellow-50 dark:bg-gray-800" role="alert">
-         ✅ Registration details for this year's (2025) meet are up to date!
-        </div>
-        <p>
-        $30 per athlete or $450 per team.
-        </p>
-        <p>
-        Registration opens on Friday March 21 and closes on Saturday April 19 at 11:59 PM
-        </p>
-        <p>
-          Registration can be found by clicking <a className="text-red-500 underline" href="https://www.athletic.net/TrackAndField/meet/593578/">here</a>.
-        </p>
-      {/* Section for awards */}
-      <h2 className="text-2xl font-bold mt-5">
-        Awards
-      </h2>
-      <p>
-        The winner of each event will receive a Terrapin Invite pint glass.
-        Team awards will go to the top 3 teams overall.
-      </p>
-     
-      <h2 className="text-2xl">Archived Meet Results</h2>
-      <p>Meet records can be found <a className="underline text-red-500" href="/home-meet-records">here</a>.</p>
-      <ol>
-        <li className="underline"><a className="underline text-red-500" href="https://results.firstlanetiming.com/meets/35171">2024 Results</a></li>
-      </ol>
+      <div className="content-container">
+        <header className="page-header">
+          <span className="page-eyebrow">Home Meet</span>
+          <h1 className="page-title">Terrapin Invitational</h1>
+          <p className="page-subtitle">
+            Saturday, April 18 • Kehoe Track &amp; Field Complex • College Park,
+            MD. All event details and registration info for our fifth annual
+            home invitational live here. See you on the track!
+          </p>
+        </header>
 
+        <section className="page-section">
+          <div className="page-card">
+            <h2 className="text-2xl font-bold text-neutral-800">When &amp; Where</h2>
+            <ul className="mt-4 space-y-2 text-neutral-600">
+              <li>
+                <a
+                  href="https://maps.app.goo.gl/Yzw4hC2NY6ynLfP68"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Kehoe Track &amp; Field Complex, 7898 Championship Ln, College
+                  Park, MD 20742
+                </a>
+              </li>
+              <li>Saturday, April 18, 2026</li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="page-section">
+          <div className="page-card">
+            <div className="page-callout mb-4 text-sm font-semibold">
+              Thank you to everyone who joined us for the 2026 Terrapin Invite! Stay tuned for next year...
+            </div>
+            <h2 className="text-2xl font-bold text-neutral-800">Order of Events</h2>
+            <p className="mt-2 text-neutral-600">
+              Women's heats will precede men's heats for each event. We will follow a rolling schedule so the meet could be running ahead or behind, please listen to announcements about the schedule.
+            </p>
+
+            <div className="mt-6 grid gap-6 md:grid-cols-2">
+              <div>
+                <h3 className="text-xl font-semibold text-neutral-800">
+                  Track Events — beginning at 10 AM
+                </h3>
+                <ul className="mt-3 space-y-2 text-neutral-600">
+                  {trackEvents.map((e) => (
+                    <li key={e.event} className={e.break ? "italic text-neutral-400" : ""}>
+                      <span className="font-semibold">{e.time}</span> — {e.event}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-4 p-3 rounded" style={{ backgroundColor: "rgba(0,0,0,0.05)" }}>
+                  <span className="font-semibold">{diceRelay.title}</span>
+                  <p className="text-sm mt-1">{diceRelay.description}</p>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-neutral-800">
+                  Field Events — beginning at 9:30 AM
+                </h3>
+                <ul className="mt-3 space-y-2 text-neutral-600">
+                  {fieldEvents.map((event) => (
+                    <li key={event}>{event}</li>
+                  ))}
+                </ul>
+
+                <h3 className="text-xl font-semibold text-neutral-800 mt-6">
+                  Hexathlon
+                </h3>
+                <p className="mt-2 text-neutral-600">
+                  {hexathlonEvents.join(", ")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="page-section">
+          <div className="page-card">
+            <div className="page-callout mb-4 text-sm font-semibold">
+              🕓 Stay tuned for registration details next year...
+            </div>
+            <h2 className="text-2xl font-bold text-neutral-800">Registration</h2>
+            <ul className="mt-4 space-y-3 text-neutral-600">
+              <li>TBA</li>
+              {/* <li>
+                Register on{" "}
+                <a
+                  href="https://www.athletic.net/TrackAndField/meet/635868/info"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Athletic.net
+                </a>
+              </li>  */}
+            </ul>
+          </div>
+        </section>
+
+        <section className="page-section page-grid two">
+          <div className="page-card">
+            <h2 className="text-2xl font-bold text-neutral-800">Awards</h2>
+            <p className="mt-3 text-neutral-600">
+              {/* Event winners earn a Terrapin Invite pint glass. Team trophies go
+              to the top three clubs overall. */}
+              Event winners will win an awesome Terrapin Invitational pint glass.  Team winners will receive a flag.
+            </p>
+          </div>
+
+          <div className="page-card">
+            <h2 className="text-2xl font-bold text-neutral-800">Archived Results</h2>
+            <p className="mt-3 text-neutral-600">
+              Explore past results and{" "}
+              <a href="/home-meet-records">meet records</a>.
+            </p>
+            <ul className="mt-4 space-y-2">
+              {archivedResults.map((result) => (
+                <li key={result.href}>
+                  <a
+                    href={result.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-[#d62828] hover:text-[#8b3dff]"
+                  >
+                    {result.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </div>
     </div>
-    
-    </div>
-   
   );
 }

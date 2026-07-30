@@ -4,10 +4,10 @@
     "event": "1 mile",
     "gender": "M",
     "true_distance": 1609,
-    "time": "4:23.37",
+    "time": "4:23.27",
     "seconds": 263.37,
     "athlete": "Max Worley",
-    "date": "2/11/2017",
+    "date": "2/11/2023",
     "meet": "Happy Valley Invitational"
   },
   {
@@ -59,10 +59,10 @@
     "event": "4x400m Relay",
     "gender": "F",
     "true_distance": 1600,
-    "time": "4:37.53",
-    "seconds": 277.53,
-    "athlete": "Katrina Hrabinski, Erin Langille, Julia Heiges, Catie Denz",
-    "date": "2/11/2017",
+    "time": "4:35.28",
+    "seconds": 275.28,
+    "athlete": "Raquel Tolin, Caiya Campbell, Rachel Hylan, Mandy Callaghan",
+    "date": "2/15/2026",
     "meet": "Happy Valley Invitational"
   },
   {
@@ -70,10 +70,10 @@
     "event": "Distance Medley Relay",
     "gender": "M",
     "true_distance": 4000,
-    "time": "11:03.99",
-    "seconds": 663.99,
-    "athlete": "Ethan Burbridge, DeWayne Haamid, Daniel Jordan, Jack Wavering",
-    "date": "2/10/2018",
+    "time": "10:52.64",
+    "seconds": 652.64,
+    "athlete": "Ryan Tyberg, Logan Cyford, Dylan Schmidt, Abhyuday Srivatsa",
+    "date": "2/15/2026",
     "meet": "Happy Valley Invitational"
   },
   {
@@ -136,32 +136,43 @@
     "event": "200 meter",
     "gender": "M",
     "true_distance": 200,
-    "time": "23.06",
-    "seconds": 23.06,
-    "athlete": "Reggie Carnegie",
-    "date": "2/10/2018",
+    "time": "22.19",
+    "seconds": 22.19,
+    "athlete": "Jamil Yacoubou Adam",
+    "date": "2/15/2026",
+    "meet": "Happy Valley Invitational"
+  },
+    {
+    "season": "Indoor",
+    "event": "200 meter",
+    "gender": "F",
+    "true_distance": 200,
+    "time": "27.99",
+    "seconds": 27.99,
+    "athlete": "Jenna Amrhein",
+    "date": "2/10/2024",
     "meet": "Happy Valley Invitational"
   },
   {
-    "season": "Indoor",
+    "season": "Outdoor",
     "event": "200 meter",
     "gender": "F",
     "true_distance": 200,
     "time": "26.02",
     "seconds": 26.02,
-    "athlete": "Erin Henderson",
-    "date": "5/03/2024",
-    "meet": "Kehoe Twilight 2024"
+    "athlete": "Nethmini Perera",
+    "date": "4/27/2025",
+    "meet": "Terrapin Invitational 2025"
   },
   {
     "season": "Indoor",
     "event": "4x200m Relay",
     "gender": "M",
     "true_distance": 800,
-    "time": "1:37.53",
-    "seconds": 97.53,
-    "athlete": "Jonathan Shinholt, Drew Lepre, Kareem McDavid, Fares Massoud",
-    "date": "2/10/2018",
+    "time": "1:35.16",
+    "seconds": 95.16,
+    "athlete": "Logan Hurney, Nolan Racette, Calvin Waller, Olusegun Akinnusi",
+    "date": "2/15/2026",
     "meet": "Happy Valley Invitational"
   },
   {
@@ -180,10 +191,10 @@
     "event": "60 meter",
     "gender": "M",
     "true_distance": 60,
-    "time": "7.12",
-    "seconds": 7.12,
-    "athlete": "Reggie Carnegie",
-    "date": "2/10/2018",
+    "time": "6.86",
+    "seconds": 6.86,
+    "athlete": "Jamil Yacoubou Adam",
+    "date": "2/15/2026",
     "meet": "Happy Valley Invitational"
   },
   {
@@ -193,7 +204,7 @@
     "true_distance": 60,
     "time": "8.07",
     "seconds": 8.07,
-    "athlete": "Erin, Henderson",
+    "athlete": "Erin Henderson",
     "date": "2/10/2024",
     "meet": "Happy Valley Invitational"
   },
@@ -202,10 +213,10 @@
     "event": "60m Hurdles",
     "gender": "M",
     "true_distance": 60,
-    "time": "8.67",
-    "seconds": 8.67,
-    "athlete": "Drew Lepre",
-    "date": "2/10/2018",
+    "time": "7.89",
+    "seconds": 7.89,
+    "athlete": "Jamil Yacoubou Adam",
+    "date": "2/15/2026",
     "meet": "Happy Valley Invitational"
   },
   {
@@ -257,10 +268,10 @@
     "event": "Triple Jump",
     "gender": "F",
     "true_distance": 0,
-    "time": "9.22 (Mark)",
+    "time": "9.58 (Mark)",
     "seconds": 0,
-    "athlete": "Caiya Campbell",
-    "date": "2/10/2024",
+    "athlete": "Katie Callaghan",
+    "date": "2/15/2026",
     "meet": "Happy Valley Invitational"
   },
   {
@@ -268,10 +279,10 @@
     "event": "Long Jump",
     "gender": "M",
     "true_distance": 0,
-    "time": "6.02 (Mark)",
+    "time": "6.39 (Mark)",
     "seconds": 0,
-    "athlete": "Kalabe Arefeayne",
-    "date": "2/11/2023",
+    "athlete": "Nolan Racette",
+    "date": "2/15/2026",
     "meet": "Happy Valley Invitational"
   },
   {
@@ -466,10 +477,10 @@
     "event": "3000m Steeplechase",
     "gender": "M",
     "true_distance": 3000,
-    "time": "9:56.16",
-    "seconds": 596.18,
-    "athlete": "Max Worley",
-    "date": "4/16/2023",
+    "time": "9:54.23",
+    "seconds": 594,
+    "athlete": "Anthony Boscolo",
+    "date": "4/11/2026",
     "meet": "NIRCA Nationals"
   },
   {
@@ -488,11 +499,11 @@
     "event": "200 meter",
     "gender": "M",
     "true_distance": 200,
-    "time": "22.32",
-    "seconds": 22.32,
-    "athlete": "Clayton Buckman",
-    "date": "3/20/2021",
-    "meet": "Stan Romanoski Open"
+    "time": "22.00",
+    "seconds": 22.00,
+    "athlete": "Nolan Racette",
+    "date": "4/4/2026",
+    "meet": "George Mason Dalton Ebanks Invitational"
   },
   {
     "season": "Outdoor",
@@ -554,11 +565,11 @@
     "event": "4x100m Relay",
     "gender": "M",
     "true_distance": 400,
-    "time": "43.50",
-    "seconds": 43.5,
-    "athlete": "Evan Gresser, Lester Crockett, Mark Kwegyir-Aggrey, Brion Tillman-Young",
-    "date": "4/26/2017",
-    "meet": "Penn Relays Carnival"
+    "time": "42.62",
+    "seconds": 42.62,
+    "athlete": "Peter Capozzoli, Olusegun Akinnusi, Logan Hurney, Nolan Racette",
+    "date": "4/4/2026",
+    "meet": "George Mason Dalton Ebanks Invitational"
   },
   {
     "season": "Outdoor",
@@ -587,11 +598,11 @@
     "event": "400m Hurdles",
     "gender": "F",
     "true_distance": 400,
-    "time": "1:10.36",
-    "seconds": 70.36,
-    "athlete": "Grace Olawuni",
-    "date": "3/31/2017",
-    "meet": "Danny Curran Invitational"
+    "time": "1:06.39",
+    "seconds": 66,
+    "athlete": "Kate Callaghan",
+    "date": "4/18/2026",
+    "meet": "Terrapin Invitational 2026"
   },
   {
     "season": "Outdoor",
@@ -642,11 +653,11 @@
     "event": "400 meter",
     "gender": "M",
     "true_distance": 400,
-    "time": "49.38",
-    "seconds": 49.38,
-    "athlete": "Clayton Buckman",
-    "date": "4/19/2019",
-    "meet": "Widener Invitational (D3)"
+    "time": "49.12",
+    "seconds": 49.12,
+    "athlete": "Logan Hurney",
+    "date": "4/18/2026",
+    "meet": "Terrapin Invitational 2026" 
   },
   {
     "season": "Outdoor",
@@ -708,22 +719,22 @@
     "event": "100 meter",
     "gender": "M",
     "true_distance": 100,
-    "time": "11.33",
-    "seconds": 11.33,
-    "athlete": "Reggie Carnegie",
-    "date": "3/30/2018",
-    "meet": "Danny Curran Invitational"
+    "time": "10.77",
+    "seconds": 10.77,
+    "athlete": "Jamil Yacoubou Adam",
+    "date": "4/4/2026",
+    "meet": "George Mason Dalton Ebanks Invitational"
   },
   {
     "season": "Outdoor",
     "event": "100 meter",
     "gender": "F",
     "true_distance": 100,
-    "time": "12.75",
-    "seconds": 12.75,
-    "athlete": "Erin Henderson",
-    "date": "5/2/2024",
-    "meet": "Kehoe Twilight 2024"
+    "time": "12.19",
+    "seconds": 12.19,
+    "athlete": "Nethmini Perera",
+    "date": "4/27/2025",
+    "meet": "Terrapin Invitational 2025"
   },
   {
     "season": "Outdoor",
@@ -774,22 +785,22 @@
     "event": "110m Hurdles",
     "gender": "M",
     "true_distance": 110,
-    "time": "16.15",
-    "seconds": 16.15,
-    "athlete": "Mason Scott",
-    "date": "5/5/2023",
-    "meet": "Kehoe Twilight 2023"
+    "time": "13.89",
+    "seconds": 13.89,
+    "athlete": "Jamil Yacoubou Adam",
+    "date": "4/4/2026",
+    "meet": "George Mason Dalton Ebanks Invitational"
   },
   {
     "season": "Outdoor",
     "event": "Shotput",
     "gender": "M",
     "true_distance": 0,
-    "time": "14.32 (Mark)",
+    "time": "14.76 (Mark)",
     "seconds": 0,
     "athlete": "Maxwell Pizzolato",
-    "date": "5/3/2024",
-    "meet": "Kehoe Twilight"
+    "date": "4/5/2025",
+    "meet": "NIRCA Nationals 2025"
   },
   {
     "season": "Outdoor",
@@ -851,11 +862,11 @@
     "event": "Half Marathon",
     "gender": "M",
     "true_distance": 21097.5,
-    "time": "1:13:14.00",
-    "seconds": 4394,
-    "athlete": "Nick Gonzalez",
-    "date": "10/15/2022",
-    "meet": "Baltimore Running Festival 2022"
+    "time": "1:13:00.00",
+    "seconds": 4380,
+    "athlete": "Ben Waterman",
+    "date": "04/11/2026",
+    "meet": "NIRCA Nationals 2026"
   },
   {
     "season": "Cross Country",
@@ -906,10 +917,10 @@
     "event": "Marathon",
     "gender": "M",
     "true_distance": 42195,
-    "time": "2:40:26",
-    "seconds": 9626,
-    "athlete": "Sam Fields",
-    "date": "4/15/2024",
+    "time": "2:39:03",
+    "seconds": 9543,
+    "athlete": "Logan Trautwein",
+    "date": "4/21/2024",
     "meet": "Boston Marathon"
   },
   {
@@ -939,10 +950,10 @@
     "event": "14k Challenge",
     "gender": "M",
     "true_distance": 14000,
-    "time": "1:03:28",
-    "seconds": 3808,
-    "athlete": "Evan Masiello",
-    "date": "11/9/2024",
+    "time": "1:02:48",
+    "seconds": 3768,
+    "athlete": "Henry Schwartz",
+    "date": "11/8/2025",
     "meet": "Nirca Nationals"
   },
   {
@@ -950,10 +961,10 @@
     "event": "Swedish Relay",
     "gender": "F",
     "true_distance": 1000,
-    "time": "2:38",
-    "seconds": 158,
-    "athlete": "Katie Hernandez, Jenna Amrhein, Caiya Campbell, Mandy Callaghan",
-    "date": "4/20/2024",
+    "time": "2:36:28",
+    "seconds": 156,
+    "athlete": "Raquel Tolin, Katie Hernandez, Rachel Hylan, Amanda Callaghan",
+    "date": "4/27/2025",
     "meet": "Terrapin Invitational"
   },
   {
@@ -972,10 +983,10 @@
     "event": "1500m Race Walk",
     "gender": "F",
     "true_distance": 1500,
-    "time": "9:34.93",
-    "seconds": 514.93,
-    "athlete": "Hannah Haber",
-    "date": "4/20/2024",
+   "time": "8:09.51",
+    "seconds": 489,
+   "athlete": "Maddeline Glennon",
+    "date": "4/18/2026",
     "meet": "Terrapin Invitational"
   },
   {
@@ -983,10 +994,10 @@
     "event": "1500m Race Walk",
     "gender": "M",
     "true_distance": 1500,
-    "time": "9:07.32",
-    "seconds": 547.32,
-    "athlete": "Jared Kimiabakhsh",
-    "date": "4/20/2024",
+   "time": "8:05.98",
+    "seconds": 485,
+   "athlete": "Spencer Anthony",
+    "date": "4/18/2026",
     "meet": "Terrapin Invitational"
   },
   {
@@ -1027,10 +1038,10 @@
     "event": "Ice Cream Trifecta Run",
     "gender": "M",
     "true_distance": 6469.563,
-    "time": "29:33",
+    "time": "27:37",
     "seconds": 1773,
-    "athlete": "Zach Kiedrowski",
-    "date": "5/10/2024",
+    "athlete": "Logan Cyford",
+    "date": "5/08/2025",
     "meet": "Ice Cream Trifecta Run"
   },
   {
@@ -1076,5 +1087,27 @@
     "athlete": "Lily Scherer",
     "date": "4/12/2024",
     "meet": "Hot Sauce Night"
+  },
+    {
+    "season": "Outdoor",
+    "event": "Men's Hexathlon",
+    "gender": "M",
+    "true_distance": 0,
+    "time": "High Jump - 4'8 (1.42m), Shot Put (16 lb) - 25'0 (7.62m), Long Jump - 17'5 (5.30m), 110m Hurdles (42'') - 22.01, 1500m - 4:23.30, 200m - 25.34",
+    "seconds": 0,
+    "athlete": "Logan Cyford",
+    "date": "4/18/2026",
+    "meet": "Terrapin Invitational 2026"
+  },
+      {
+    "season": "Outdoor",
+    "event": "Womens's Hexathlon",
+    "gender": "F",
+    "true_distance": 0,
+    "time": "High Jump - 4'8 (1.42m), Shot Put (12 lb) - 18'5 (5.62m), Long Jump - 14'2 (4.31m), 100m Hurdles (33'') - 18.17, 1500m - 5:23.74, 200m - 28.01",
+    "seconds": 0,
+    "athlete": "Mandy Callaghan",
+    "date": "4/18/2026",
+    "meet": "Terrapin Invitational 2026"
   }
 ]

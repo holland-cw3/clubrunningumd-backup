@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -11,15 +11,19 @@ import Records from "./pages/Records";
 import Workouts from "./pages/Workouts";
 import Photos from "./pages/Photos";
 import Paths from "./pages/Routes";
+import RecordManager from "./internalTools/recordManager";
 import SignUp from "./pages/SignUp";
 import EmailArchive from "./pages/EmailArchive";
 import PrivatePage from "./internalTools/photoUpload";
 import NewMemberInfo from "./pages/NewMemberInfo";
-import Login from "./components/Login"
-import TextEditor from "./components/TextEditor";
-import Feed from "./pages/BlogFeed"
+import Blog from "./pages/Blog";
+import Feed from "./pages/BlogFeed";
 import Article from "./pages/Article";
-import Calendar from "./pages/Calendar"
+import Calendar from "./pages/Calendar";
+import XCHomeMeet from "./pages/XCHomeMeet";
+import ProfilePage from "./pages/ProfilePage";
+
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -44,15 +48,18 @@ function App() {
       <ConditionalHeader />
       <Routes>
         <Route path="/" element={<Home />} /> 
+        <Route path="/home" element={<Home />} /> 
         <Route path="/about" element={<About />} /> 
         <Route path="/signup" element={<SignUp />} /> 
         <Route path="/joinus" element={<NewMemberInfo />} />{" "}
         <Route path="/races" element={<Races />} />
         <Route path="/home-meet" element={<HomeMeet />} />{" "}
+        <Route path="/old-bay-invite" element = {<XCHomeMeet />}/>
         <Route
           path="/private"
           element={isLocalhost ? <PrivatePage /> : <Home />}
         />
+        <Route path="/private/recordManager" element={isLocalhost ? <RecordManager /> : <Home />} />
         {/* Home Meet page */}
         <Route path="/home-meet-records" element={<HomeMeetRecords />} />{" "}
         {/* Home Meet Records page */}
@@ -69,9 +76,11 @@ function App() {
         <Route path="/routes" element={<Paths />} /> {/* Routes page */}
         <Route path="/*" element={<Home />} /> {/* Join Us page */}
         {/* {Blog Editor page} */}
-      <Route path="/blog" element={<Login/>}/>
+      <Route path="/blog" element={<Blog/>}/>
       <Route path="/blog_feed" element={<Feed/>}/>
-      <Route path="/article/:id" element={<Article/>}/>
+      <Route path="/article/:slug" element={<Article/>}/>
+      <Route path="/profiles/:slug" element={<ProfilePage />} />
+
         <Route path="/routes" element={<Paths />} /> 
         <Route path="*" element={<Navigate to="/" replace />} />
         {/* Calendar page route */}

@@ -1,69 +1,110 @@
-import React from "react";
-import axios from 'axios';
-import { useState,useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../CSS/umd-fonts.css";
-import { Link } from 'react-router-dom';
+import fredHalfPic from "../Pictures/fredHalfTeam.JPG";
+import { fetchPublishedPosts } from "../blog/api";
 
-export default function BlogFeed(){
-    const [posts,setPosts] = useState([]);
-    const [isSetFlag,setFlag] = useState(false);
-    if(!isSetFlag){
-    setFlag(true);
-    axios.get('https://marylandclubrunningblogapi.vercel.app/get_feed')
-    .then(resp=> setPosts(resp.data))
+export default function BlogFeed() {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const loadPosts = async () => {
+      try {
+        const data = await fetchPublishedPosts(12);
+        setPosts(data);
+      } catch (err) {
+        setError("Unable to load the blog feed right now.");
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadPosts();
+  }, []);
+
+  const formatDate = (timestamp) => {
+    if (!timestamp) return "Coming Soon";
+    if (typeof timestamp.toDate === "function") {
+      return timestamp.toDate().toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      });
     }
-    return(
-        <>
-        <center>
-  <div className="relative">
-    {/* Image Container */}
-    <div className="teamPic-container">
-      <img 
-        src="/static/media/fredHalfTeam.dd0204a7949f7659d973.JPG" 
-        alt="Team" 
-        className="teamPic w-full h-auto"
-      />
-    </div>
+    return timestamp;
+  };
 
-    {/* Banner Overlay */}
-    <div className="wallsmith absolute w-full bg-black bottom-[-10px] left-1/2 transform -translate-x-1/2 text-center">
-      <h1 className="text-9xl text-yellow-300 font-bold">The Blog</h1>
-      <a 
-        href="#"
-        className="text-white font-sans text-xl mt-2 inline-block"
-      >
-        Login
-      </a>
-    </div>
-  </div>
-</center>
+  return (
+    <div className="page-shell">
+      <div className="page-hero">
+        <img
+          src={fredHalfPic}
+          alt="Maryland Club Running celebrating after a race"
+          className="page-hero-image contain"
+        />
+      </div>
 
-       {(
-        posts.map(post =>(
-            <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-            <div class="flex justify-between items-center mb-5 text-gray-500">
-               
-                <span class="text-sm">{post.date}</span>
+      <div className="content-container">
+        <header className="page-header">
+          <span className="page-eyebrow">Stories</span>
+          <h1 className="page-title">The Blog</h1>
+          <p className="page-subtitle">
+            Race recaps, training diaries, and community spotlights written by
+            Terps for Terps.
+          </p>
+        </header>
+
+        {loading ? (
+          <section className="page-section">
+            <div className="page-card">
+              <p>Loading the latest posts...</p>
             </div>
-            <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><a href="#">{post.title}</a></h2>
-            <p class="mb-5 font-light text-gray-500 dark:text-gray-400">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.</p>
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-4">
-                    <img class="w-7 h-7 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="Jese Leos avatar" />
-                    <span class="font-medium dark:text-white">
-                        {post.writer_id}
-                    </span>
-                </div>
-                <Link to={`/article/${post.post_id}`} className="text-blue-500">
-            Read More
-          </Link>
+          </section>
+        ) : error ? (
+          <section className="page-section">
+            <div className="page-card">
+              <p>{error}</p>
             </div>
-        </article> 
-
-        ))
-       )}
-
-        </>
-    )
+          </section>
+        ) : posts.length === 0 ? (
+          <section className="page-section">
+            <div className="page-card">
+              <p>No posts yet. Check back soon!</p>
+            </div>
+          </section>
+        ) : (
+          <section className="page-section page-grid two">
+            {posts.map((post) => {
+              const preview =
+                post.excerpt ||
+                "Tap through to read the latest update from the team.";
+              return (
+                <article key={post.id} className="page-card">
+                  <div className="flex h-full flex-col gap-4">
+                    <div className="flex items-center justify-between text-sm text-neutral-500">
+                      <span>{formatDate(post.publishedAt)}</span>
+                      <span>{post.authorDisplayName}</span>
+                    </div>
+                    <h2 className="text-2xl font-bold text-neutral-800">
+                      {post.title}
+                    </h2>
+                    <p className="text-neutral-600 leading-relaxed">{preview}</p>
+                    <div className="mt-auto">
+                      <Link
+                        to={`/article/${post.slug}`}
+                        className="inline-flex items-center gap-2 rounded-full border border-transparent bg-gradient-to-r from-[#f6a622] via-[#ff8fab] to-[#6a5cf6] px-4 py-2 text-sm font-semibold text-white shadow-lg transition hover:shadow-xl"
+                      >
+                        Read More
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </section>
+        )}
+      </div>
+    </div>
+  );
 }
-

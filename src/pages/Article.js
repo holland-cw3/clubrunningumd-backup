@@ -1,60 +1,98 @@
-import React, {useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom';
-import DOMPurify from 'dompurify';
-import axios from 'axios';
-export default function Article(){
-    const [article, setArticle] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const { id } = useParams();
-    useEffect(() =>{
- 
-        setLoading(true);
-        const form_data = new FormData()
-        form_data.append('post_id',id);
-        axios.post('https://marylandclubrunningblogapi.vercel.app/get_article',form_data)
-        .then(response =>{
-            setArticle(response.data);
-            setLoading(false)
-        } 
-        )
-        .catch(error => error.response)
-    },[id])
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import DOMPurify from "dompurify";
+import { fetchPostById, fetchPostBySlug } from "../blog/api";
 
-   
-    if(loading){
-        return <p>loading...</p>
-    }
-        
-    const {clicks,contents,date,post_id,title,writer_id} = article;
-    const cleaned_content = DOMPurify.sanitize(contents);
-        
-    
-    
+export default function Article() {
+  const [article, setArticle] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const { slug } = useParams();
 
-    return(
-        <>
-           <div className="wallsmith w-full text-center">
-      <h1 className="text-9xl text-yellow-300 bg-black font-bold">The Blog</h1>
-      <a 
-        href="#"
-        className="text-white font-sans text-xl mt-2 inline-block"
-      >
-        Login
-      </a>
-    </div>
-    <div className="article">
-      <h1 className="text-4xl font-bold">{title}</h1>
-      <p className="text-sm text-yellow-500">
-        By {writer_id} on {date}
-      </p>
-      <p className="text-gray-600 mt-2">Clicks: {clicks}</p>
-      <hr className="my-4" />
-      <div
-        className="article-contents prose prose-lg max-w-none"
-        dangerouslySetInnerHTML={{ __html: cleaned_content }}
-      ></div>
-    </div>
-        </>
+  useEffect(() => {
+    const fetchArticle = async () => {
+      setLoading(true);
+      try {
+        const bySlug = await fetchPostBySlug(slug);
+        if (bySlug) {
+          setArticle(bySlug);
+          setError(null);
+          return;
+        }
+        const byId = await fetchPostById(slug);
+        if (byId) {
+          setArticle(byId);
+          setError(null);
+        } else {
+          setArticle(null);
+          setError("We couldn’t find that article. Please try again later.");
+        }
+      } catch (err) {
+        setError("Unable to load that article right now.");
+        setArticle(null);
+      } finally {
+        setLoading(false);
+      }
+    };
 
+    fetchArticle();
+  }, [slug]);
+
+  if (loading) {
+    return (
+      <div className="page-shell">
+        <div className="content-container">
+          <div className="page-card">
+            <p>Loading article...</p>
+          </div>
+        </div>
+      </div>
     );
+  }
+
+  if (!article) {
+    return (
+      <div className="page-shell">
+        <div className="content-container">
+          <div className="page-card">
+            <p>{error || "We couldn&apos;t find that article. Please try again later."}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const { content, publishedAt, title, authorDisplayName } = article;
+  const cleanedContent = DOMPurify.sanitize(content);
+  const formattedDate =
+    publishedAt && typeof publishedAt.toDate === "function"
+      ? publishedAt.toDate().toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        })
+      : "Preview";
+
+  return (
+    <div className="page-shell">
+      <div className="content-container">
+        <header className="page-header">
+          <span className="page-eyebrow">The Blog</span>
+          <h1 className="page-title">{title}</h1>
+          <p className="page-subtitle">
+            Written by {authorDisplayName} · {formattedDate}
+          </p>
+        </header>
+
+        <section className="page-section">
+          <div className="page-card">
+            <div
+              className="article-contents space-y-4 leading-relaxed text-neutral-700"
+              dangerouslySetInnerHTML={{ __html: cleanedContent }}
+            />
+          </div>
+        </section>
+      </div>
+    </div>
+  );
 }
